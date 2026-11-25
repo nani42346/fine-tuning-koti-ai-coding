@@ -4,6 +4,10 @@
 
 Koti AI Coding answers programming questions, writes code snippets, explains concepts and helps you debug — running entirely on your own machine (CPU only, no GPU or cloud API needed).
 
+### 🔗 [Live demo](https://nani42346.github.io/fine-tuning-koti-ai-coding/)
+
+> **Note:** the live demo shows the real intro page and dashboard UI. The model itself runs locally, so the hosted demo shows **"API Offline"** and chat won't answer — unless you run the API on your own machine (see [Getting started](#getting-started)), in which case the demo connects to it at `http://127.0.0.1:8000`.
+
 ![Intro page](docs/intro.png)
 
 ![Dashboard](docs/dashboard.png)
@@ -39,6 +43,7 @@ Koti AI Coding answers programming questions, writes code snippets, explains con
 ├── tinyllama-coding-model/   # Trained LoRA adapter
 ├── frontend/coding-ai-ui/    # React dashboard (intro page + chat dashboard)
 ├── start.bat / start.js      # One-click launcher for API + web UI
+├── .github/workflows/        # Auto-deploys the dashboard demo to GitHub Pages
 └── docs/                     # Screenshots
 ```
 

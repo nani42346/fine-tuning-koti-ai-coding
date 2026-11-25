@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import "./App.css";
 
-const API_URL = "http://127.0.0.1:8000";
+// Override at build time with REACT_APP_API_URL (e.g. a hosted API); defaults to the local server
+const API_URL = process.env.REACT_APP_API_URL || "http://127.0.0.1:8000";
 
 /* ---------- Inline icon set (no extra dependency) ---------- */
 const paths = {
@@ -322,9 +323,11 @@ function App() {
             error: true,
             text:
               `**Couldn't reach the model** (${err.message}).\n\n` +
-              `The API server on port 8000 is not running. Start it with **start.bat** in the project folder, or:\n\n` +
-              "```powershell\ncd \"C:\\Calibo\\Phase-2\\DL\\Fine Tunning\"\nvenv\\Scripts\\activate\nuvicorn api:app --reload\n```\n\n" +
-              `Wait for **"Application startup complete"**, then ask again.`,
+              `The model API at \`${API_URL}\` is not running. The model runs locally, so start it from the project folder ` +
+              `(or double-click **start.bat** on Windows):\n\n` +
+              "```bash\nvenv\\Scripts\\activate   # macOS/Linux: source venv/bin/activate\nuvicorn api:app --reload\n```\n\n" +
+              `Wait for **"Application startup complete"**, then ask again. ` +
+              `Setup guide: [github.com/nani42346/fine-tuning-koti-ai-coding](https://github.com/nani42346/fine-tuning-koti-ai-coding)`,
             time: Date.now(),
           },
         ]);
