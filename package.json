@@ -1,0 +1,11 @@
+{
+  "name": "koti-ai-coding",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Koti AI Coding - fine-tuned TinyLlama API + React dashboard",
+  "scripts": {
+    "start": "node start.js",
+    "api": "node start.js --api-only",
+    "web": "node start.js --web-only"
+  }
+}

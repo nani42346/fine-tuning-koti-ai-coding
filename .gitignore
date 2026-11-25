@@ -1,0 +1,24 @@
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Node / React
+node_modules/
+frontend/coding-ai-ui/build/
+npm-debug.log*
+
+# Training checkpoints (optimizer state, large) - the final adapter is kept
+tinyllama-coding-model/checkpoint-*/
+tinyllama-coding-model-v2/
+
+# Secrets / local env
+.env
+.env.*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
